@@ -24,7 +24,7 @@ const getImageComponent = config => class Image extends Component {
   };
 
   setEntityAlignmentCenter: Function = (): void => {
-    this.setEntityAlignment('none');
+    this.setEntityAlignment('center');
   };
 
   setEntityAlignment: Function = (alignment): void => {
@@ -93,9 +93,9 @@ const getImageComponent = config => class Image extends Component {
         className={classNames(
           'rdw-image-alignment',
           {
-            'rdw-image-left': alignment === 'left',
+            'rdw-image-left': !alignment || alignment === 'left',
             'rdw-image-right': alignment === 'right',
-            'rdw-image-center': !alignment || alignment === 'none',
+            'rdw-image-center': alignment === 'center',
           },
         )}
       >
