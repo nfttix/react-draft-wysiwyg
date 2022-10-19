@@ -86,9 +86,8 @@ const getImageComponent = config => class Image extends Component {
     const entity = contentState.getEntity(block.getEntityAt(0));
     const { src, alignment, height, width, alt } = entity.getData();
 
-    useEffect(()=>{
-      alert(alignment)
-    },[alignment])
+    console.warn(alignment)
+
     return (
       <span
         onMouseEnter={this.toggleHovered}
