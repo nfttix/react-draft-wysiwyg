@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { EditorState } from 'draft-js';
 import classNames from 'classnames';
@@ -85,8 +85,10 @@ const getImageComponent = config => class Image extends Component {
     const { isReadOnly, isImageAlignmentEnabled } = config;
     const entity = contentState.getEntity(block.getEntityAt(0));
     const { src, alignment, height, width, alt } = entity.getData();
-    alert(alignment)
 
+    useEffect(()=>{
+      alert(alignment)
+    },[alignment])
     return (
       <span
         onMouseEnter={this.toggleHovered}
